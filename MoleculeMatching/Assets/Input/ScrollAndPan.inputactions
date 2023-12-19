@@ -2,34 +2,72 @@
     "name": "ScrollAndPan",
     "maps": [
         {
-            "name": "Orbit Camera",
+            "name": "Object Movement",
             "id": "97d9f194-8818-4c29-ad9c-1f08a92a095a",
             "actions": [
-                {
-                    "name": "Pan",
-                    "type": "Value",
-                    "id": "68c01dda-1bf6-40e0-8134-2e7ea896c9b6",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
                 {
                     "name": "Grab",
                     "type": "Button",
                     "id": "9fe6a158-8658-4696-9fba-91ed7a2fed62",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Hold",
-                    "initialStateCheck": false
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Pan",
+                    "type": "Button",
+                    "id": "be62db61-98da-40c5-8dbb-edb5b2915743",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Rotation",
+                    "type": "Value",
+                    "id": "f93e7627-87ab-40cb-accb-98158beee0c3",
+                    "expectedControlType": "Vector2",
+                    "processors": "ScaleVector2",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "MouseAxis",
+                    "type": "Value",
+                    "id": "9e7b616a-eef8-402f-a925-3ebbecb3201a",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Translation",
+                    "type": "Value",
+                    "id": "45271272-5ffc-427c-b1f5-01ad22a2396b",
+                    "expectedControlType": "Vector2",
+                    "processors": "ScaleVector2(x=0.01,y=0.01)",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
                 {
                     "name": "",
-                    "id": "1fc9576c-1a78-457a-923b-108ff02cdf31",
-                    "path": "<Mouse>/position/x",
-                    "interactions": "",
+                    "id": "6c788d79-ed96-4cf8-a1d2-161dfbcdcf53",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Grab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c2bb0465-9e36-493c-bbaf-0a5fad54d7ed",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "Press(behavior=2)",
                     "processors": "",
                     "groups": "",
                     "action": "Pan",
@@ -38,106 +76,36 @@
                 },
                 {
                     "name": "",
-                    "id": "6c788d79-ed96-4cf8-a1d2-161dfbcdcf53",
-                    "path": "<Mouse>/leftButton",
+                    "id": "eb10fa5f-8a6b-4cab-a442-d358dade0949",
+                    "path": "<Mouse>/delta",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Grab",
+                    "action": "Rotation",
                     "isComposite": false,
                     "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "Object Rotation",
-            "id": "87ed9d6d-47e0-4fd3-b8ee-099416b73b57",
-            "actions": [
-                {
-                    "name": "Grab",
-                    "type": "Button",
-                    "id": "aec6375c-a4f8-4dbe-856a-bfb5f2208b77",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 },
-                {
-                    "name": "Rotate",
-                    "type": "Value",
-                    "id": "5745ea88-4792-4020-8d10-070ab6ab193d",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                }
-            ],
-            "bindings": [
                 {
                     "name": "",
-                    "id": "0ce7d264-168d-4fcf-b5e3-cc68dc1a8560",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Grab",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "Mouse",
-                    "id": "37df2179-e568-455d-818b-2167df3a28d1",
-                    "path": "2DVector",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Rotate",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "4ee90aea-9e9f-4ff7-b293-255372947dc8",
+                    "id": "14516199-12f9-4850-bf75-d58a2a2505e0",
                     "path": "<Mouse>/delta/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Rotate",
+                    "action": "MouseAxis",
                     "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
                 },
                 {
-                    "name": "down",
-                    "id": "0dfbdf1f-9578-43aa-b4d6-660d45f2c51d",
-                    "path": "<Mouse>/delta/down",
+                    "name": "",
+                    "id": "760b9a63-540b-4de0-803f-00c05c3a1072",
+                    "path": "<Mouse>/delta",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Rotate",
+                    "action": "Translation",
                     "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "d2824286-dff7-4558-9486-0f83335bff3a",
-                    "path": "<Mouse>/delta/left",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Rotate",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "cfbbb52b-331f-4903-8fa3-3ff919ebf4a1",
-                    "path": "<Mouse>/delta/right",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Rotate",
-                    "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
                 }
             ]
         }
