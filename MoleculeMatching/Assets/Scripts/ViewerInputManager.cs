@@ -13,21 +13,20 @@ public class ViewerInputManager : MonoBehaviour
     private InputAction panAction;
     private InputAction translationAction;
 
-    Vector2 mousePressedPos;
-
 
     [SerializeField]
     private GameObject molecule;
+    [SerializeField]
+    private GameObject moleculeBox;
 
 
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
+        
         grabAction = playerInput.actions.FindAction("Grab");
         rotationAction = playerInput.actions.FindAction("Rotation");
         translationAction = playerInput.actions.FindAction("Translation");
-
-        //rotateAction = playerInput.actions.FindAction("Rotate");
         panAction = playerInput.actions.FindAction("Pan");
     }
 
@@ -35,15 +34,13 @@ public class ViewerInputManager : MonoBehaviour
     {
         // += indicates subscribed, or "listening for events"
         grabAction.performed += GrabAction;
-        
-        //
     }
 
     private void OnDisable()
     {
         // -= indicates unsubscribed, or "no longer listening for events"
         grabAction.performed -= GrabAction;
-        
+
     }
 
     private void GrabAction(InputAction.CallbackContext ctx)
@@ -53,12 +50,13 @@ public class ViewerInputManager : MonoBehaviour
         { 
             Debug.Log(val + ": Grabbed happened");
             rotationAction.performed += RotateAction;
-
+            translationAction.performed -= MoveAction;
         }
         else if (val == 0)
         {
             Debug.Log(val + ": Release happened");
             rotationAction.performed -= RotateAction;
+            translationAction.performed -= MoveAction;
         }
         
     }
@@ -72,10 +70,9 @@ public class ViewerInputManager : MonoBehaviour
 
     private void MoveAction(InputAction.CallbackContext ctx)
     {
-        //Vector2 newPos = new Vector2(ctx.ReadValue(Vector2).x * 0.01f, Mouse.current.position.ReadValue().y * 0.01f) * molecule.transform.position;
         rotationAction.performed -= RotateAction;
-        Vector2 newPos = new Vector2(ctx.ReadValue<Vector2>().x + molecule.transform.position.x, ctx.ReadValue<Vector2>().y + molecule.transform.position.y);
-        molecule.transform.position = newPos;
+        Vector2 newPos = new Vector2(ctx.ReadValue<Vector2>().x + moleculeBox.transform.position.x, ctx.ReadValue<Vector2>().y + moleculeBox.transform.position.y);
+        moleculeBox.transform.position = newPos;
         Debug.Log(ctx.ReadValue<Vector2>());
     }
 
@@ -86,6 +83,7 @@ public class ViewerInputManager : MonoBehaviour
         {
             Debug.Log(val + ": Panning...");
             translationAction.performed += MoveAction;
+            rotationAction.performed -= RotateAction;
 
         }
         else if (val == 0)
