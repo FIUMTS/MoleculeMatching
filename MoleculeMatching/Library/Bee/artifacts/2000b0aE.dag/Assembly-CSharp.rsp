@@ -342,6 +342,7 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.6f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/DynamicBounds.cs"
 "Assets/SameMoleculeTest.cs"
+"Assets/Scripts/ResetMoleculePosition.cs"
 "Assets/Scripts/TurnMolecule.cs"
 "Assets/Scripts/ViewerInputManager.cs"
 "Assets/Turn.cs"
