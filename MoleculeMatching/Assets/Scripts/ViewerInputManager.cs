@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,10 @@ public class ViewerInputManager : MonoBehaviour
     [SerializeField]
     private GameObject moleculeBox;
 
+    private void Start()
+    {
+        
+    }
 
     private void Awake()
     {
@@ -28,12 +33,23 @@ public class ViewerInputManager : MonoBehaviour
         rotationAction = playerInput.actions.FindAction("Rotation");
         translationAction = playerInput.actions.FindAction("Translation");
         panAction = playerInput.actions.FindAction("Pan");
+        
+    }
+
+    private void FreezeControls(object sender, EventArgs e)
+    {
+        Debug.Log("Freeze");
+        grabAction.performed -= GrabAction;
+        rotationAction.performed -= RotateAction;
+        translationAction.performed -= MoveAction;
+        panAction.performed -= PanAction;
     }
 
     private void OnEnable()
     {
         // += indicates subscribed, or "listening for events"
         grabAction.performed += GrabAction;
+        MatchingManager.OnMatch += FreezeControls;
     }
 
     private void OnDisable()
@@ -48,13 +64,13 @@ public class ViewerInputManager : MonoBehaviour
         float val = ctx.ReadValue<float>();
         if (val == 1)
         { 
-            Debug.Log(val + ": Grabbed happened");
+            //Debug.Log(val + ": Grabbed happened");
             rotationAction.performed += RotateAction;
             translationAction.performed -= MoveAction;
         }
         else if (val == 0)
         {
-            Debug.Log(val + ": Release happened");
+            //Debug.Log(val + ": Release happened");
             rotationAction.performed -= RotateAction;
             translationAction.performed -= MoveAction;
         }
@@ -73,7 +89,7 @@ public class ViewerInputManager : MonoBehaviour
         rotationAction.performed -= RotateAction;
         Vector2 newPos = new Vector2(ctx.ReadValue<Vector2>().x + moleculeBox.transform.position.x, ctx.ReadValue<Vector2>().y + moleculeBox.transform.position.y);
         moleculeBox.transform.position = newPos;
-        Debug.Log(ctx.ReadValue<Vector2>());
+        //Debug.Log(ctx.ReadValue<Vector2>());
     }
 
     private void PanAction(InputAction.CallbackContext ctx)
@@ -81,14 +97,14 @@ public class ViewerInputManager : MonoBehaviour
         float val = ctx.ReadValue<float>();
         if (val == 1)
         {
-            Debug.Log(val + ": Panning...");
+            //Debug.Log(val + ": Panning...");
             translationAction.performed += MoveAction;
             rotationAction.performed -= RotateAction;
 
         }
         else if (val == 0)
         {
-            Debug.Log(val + ": Panning stopped");
+           // Debug.Log(val + ": Panning stopped");
             translationAction.performed -= MoveAction;
             rotationAction.performed += RotateAction;
         }

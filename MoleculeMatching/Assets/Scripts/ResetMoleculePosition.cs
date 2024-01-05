@@ -18,7 +18,7 @@ public class ResetMoleculePosition : MonoBehaviour
     {
         Debug.Log("Collision");
         if (collider.CompareTag("Molecule")) {
-            molecule.transform.position = Vector2.zero;
+            molecule.transform.position = new Vector2(0, 1);
         }
         
     }
