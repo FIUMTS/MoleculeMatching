@@ -2,7 +2,7 @@
     "name": "ScrollAndPan",
     "maps": [
         {
-            "name": "Object Movement",
+            "name": "Movement",
             "id": "97d9f194-8818-4c29-ad9c-1f08a92a095a",
             "actions": [
                 {
@@ -65,30 +65,8 @@
                 },
                 {
                     "name": "",
-                    "id": "acd10293-1dbe-4ed3-a934-0f2066798703",
-                    "path": "<Touchscreen>/Press",
-                    "interactions": "Press(behavior=2)",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Grab",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "c2bb0465-9e36-493c-bbaf-0a5fad54d7ed",
                     "path": "<Mouse>/rightButton",
-                    "interactions": "Press(behavior=2)",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Pan",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "7b2cf880-c502-4413-8b4e-0b3a7eff3f52",
-                    "path": "<Touchscreen>/touch0/press",
                     "interactions": "Press(behavior=2)",
                     "processors": "",
                     "groups": "",
@@ -109,30 +87,8 @@
                 },
                 {
                     "name": "",
-                    "id": "d5a18c66-eb8d-495e-885b-c21defc8970a",
-                    "path": "<Touchscreen>/primaryTouch/delta",
-                    "interactions": "",
-                    "processors": "ScaleVector2(x=20,y=20)",
-                    "groups": "",
-                    "action": "Rotation",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "14516199-12f9-4850-bf75-d58a2a2505e0",
                     "path": "<Mouse>/delta/up",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MouseAxis",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "b82df5f7-7a14-4926-a5f8-0466c3ec0d31",
-                    "path": "<Touchscreen>/primaryTouch/delta/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -153,7 +109,51 @@
                 },
                 {
                     "name": "",
-                    "id": "7a494211-126f-4ada-a141-f9c1bce77543",
+                    "id": "f1997b91-878e-4e76-8968-7af5111b37de",
+                    "path": "<Touchscreen>/Press",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Grab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bd567263-fe4b-4c16-861d-7e969a3f23f2",
+                    "path": "<Touchscreen>/touch1/press",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pan",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5f151a4f-46a2-4223-984f-9143f147f0e5",
+                    "path": "<Touchscreen>/primaryTouch/delta",
+                    "interactions": "",
+                    "processors": "ScaleVector2",
+                    "groups": "",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b868539e-d79d-4236-bcf5-94ed127222e1",
+                    "path": "<Touchscreen>/primaryTouch/delta/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouseAxis",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7772a4ae-563c-4adc-a3c9-1c424c803135",
                     "path": "<Touchscreen>/primaryTouch/delta",
                     "interactions": "",
                     "processors": "",
