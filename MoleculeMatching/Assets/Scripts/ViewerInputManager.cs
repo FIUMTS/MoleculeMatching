@@ -67,6 +67,7 @@ public class ViewerInputManager : MonoBehaviour
 
     private void GrabAction(InputAction.CallbackContext ctx)
     {
+        
         float val = ctx.ReadValue<float>();
         if (val == 1)
         { 
@@ -114,5 +115,18 @@ public class ViewerInputManager : MonoBehaviour
             translationAction.performed -= MoveAction;
             //rotationAction.performed += RotateAction;
         }
+    }
+
+    public void EnableMouse()
+    {
+        //playerInput.SwitchCurrentActionMap("Mouse");
+        //playerInput.actions.FindActionMap("Mouse").Enable();
+        //playerInput.actions.FindActionMap("Touch").Disable();
+    }
+    
+    public void EnableTouch()
+    {
+       // playerInput.actions.FindActionMap("Touch").Enable();
+       // playerInput.actions.FindActionMap("Mouse").Disable();
     }
 }
