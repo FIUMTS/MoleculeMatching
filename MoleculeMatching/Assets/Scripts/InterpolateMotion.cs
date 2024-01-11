@@ -30,15 +30,17 @@ public class InterpolateMotion : MonoBehaviour
     {
         MatchingManager.OnMatch += Matched;
         mrenderer = GetComponent<MeshRenderer>();
+        
     }
 
     private void Matched(object sender, EventArgs e)
     {
         isMatched = true;
+        StartCoroutine(InterpolateMolecules());
     }
 
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
         if (isMatched)
         {
@@ -59,6 +61,44 @@ public class InterpolateMotion : MonoBehaviour
                 stillMolecule.transform.position = Vector3.Lerp(stillMolecule.transform.position, new Vector3(1.55f, stillMolecule.transform.position.y, stillMolecule.transform.position.z), Mathf.SmoothStep(0, 1, t));
                 timeElapsedCenter += Time.deltaTime;
             }
+        }
+    }*/
+
+    public IEnumerator InterpolateMolecules()
+    {
+        currentPos = transform.position;
+        currentRotation = transform.rotation;
+
+        float time = 0;
+        if (duration > 0)
+        {
+            Debug.Log("Interpolation start");
+            while (time < duration)
+            {
+                float t = time / duration;
+                transform.position = Vector3.Lerp(currentPos, stillMolecule.transform.position, Mathf.SmoothStep(0, 1, t));
+                transform.rotation = Quaternion.Slerp(currentRotation, stillMolecule.transform.rotation, Mathf.SmoothStep(0, 1, t));
+                time += Time.deltaTime;
+                yield return null;
+            }
+        }
+        StartCoroutine(MoveMoleculeToMiddle());
+    }
+
+    private IEnumerator MoveMoleculeToMiddle()
+    {
+        currentPos = transform.position;
+        currentRotation = transform.rotation;
+
+        float time = 0;
+        while (time < durationCenter)
+        {
+            Debug.Log("Move to center");
+            mrenderer.enabled = false;
+            float t = time / durationCenter;
+            stillMolecule.transform.position = Vector3.Lerp(stillMolecule.transform.position, new Vector3(1.55f, stillMolecule.transform.position.y, stillMolecule.transform.position.z), Mathf.SmoothStep(0, 1, t));
+            time += Time.deltaTime;
+            yield return null;
         }
     }
 }
