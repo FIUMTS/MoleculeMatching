@@ -7,6 +7,7 @@ TagManager:
   - Molecule
   - Wall
   - Matching
+  - Not Matching
   layers:
   - Default
   - TransparentFX

@@ -19,11 +19,10 @@ public class InterpolateMotion : MonoBehaviour
 
     private MeshRenderer mrenderer;
 
-    private float timeElapsed = 0;
-    private float timeElapsedCenter = 0;
+    //private float timeElapsed = 0;
+    //private float timeElapsedCenter = 0;
     private float duration = 0.75f;
     private float durationCenter = 2f;
-    private bool isMatched;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +34,7 @@ public class InterpolateMotion : MonoBehaviour
 
     private void Matched(object sender, EventArgs e)
     {
-        isMatched = true;
+        //isMatched = true;
         StartCoroutine(InterpolateMolecules());
     }
 
@@ -93,7 +92,6 @@ public class InterpolateMotion : MonoBehaviour
         float time = 0;
         while (time < durationCenter)
         {
-            Debug.Log("Move to center");
             mrenderer.enabled = false;
             float t = time / durationCenter;
             stillMolecule.transform.position = Vector3.Lerp(stillMolecule.transform.position, new Vector3(1.55f, stillMolecule.transform.position.y, stillMolecule.transform.position.z), Mathf.SmoothStep(0, 1, t));
