@@ -67,7 +67,7 @@ public class ViewerInputManager : MonoBehaviour
 
     private void GrabAction(InputAction.CallbackContext ctx)
     {
-        
+        Debug.Log("Grabbed");
         float val = ctx.ReadValue<float>();
         if (val == 1)
         { 
@@ -86,6 +86,7 @@ public class ViewerInputManager : MonoBehaviour
 
     private void RotateAction(InputAction.CallbackContext ctx)
     {
+        Debug.Log("Rotate");
         var axis = Quaternion.AngleAxis(-90f, Vector3.forward) * ctx.ReadValue<Vector2>(); 
         molecule.transform.rotation = Quaternion.AngleAxis(ctx.ReadValue<Vector2>().magnitude * 0.5f, axis) * molecule.transform.rotation;
         panAction.performed += PanAction;
@@ -119,14 +120,17 @@ public class ViewerInputManager : MonoBehaviour
 
     public void EnableMouse()
     {
-        //playerInput.SwitchCurrentActionMap("Mouse");
+        playerInput.SwitchCurrentActionMap("Mouse");
         //playerInput.actions.FindActionMap("Mouse").Enable();
         //playerInput.actions.FindActionMap("Touch").Disable();
     }
     
     public void EnableTouch()
     {
-       // playerInput.actions.FindActionMap("Touch").Enable();
-       // playerInput.actions.FindActionMap("Mouse").Disable();
+        //playerInput.SwitchCurrentActionMap("Touch");
+
+        playerInput.SwitchCurrentActionMap("Touch");
+       //playerInput.actions.FindActionMap("Touch").Enable();
+       //playerInput.actions.FindActionMap("Mouse").Disable();
     }
 }
