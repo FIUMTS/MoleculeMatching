@@ -28,7 +28,12 @@ public class ViewerInputManager : MonoBehaviour
 
     private void Start()
     {
-        
+        playerInput = GetComponent<PlayerInput>();
+
+        grabAction = playerInput.actions.FindAction("Grab");
+        rotationAction = playerInput.actions.FindAction("Rotation");
+        translationAction = playerInput.actions.FindAction("Translation");
+        panAction = playerInput.actions.FindAction("Pan");
     }
 
     private void Awake()
@@ -95,7 +100,7 @@ public class ViewerInputManager : MonoBehaviour
     private void MoveAction(InputAction.CallbackContext ctx)
     {
         rotationAction.performed -= RotateAction;
-        Vector2 newPos = new Vector2(ctx.ReadValue<Vector2>().x + moleculeBox.transform.position.x, ctx.ReadValue<Vector2>().y + moleculeBox.transform.position.y);
+        Vector2 newPos = new (ctx.ReadValue<Vector2>().x + moleculeBox.transform.position.x, ctx.ReadValue<Vector2>().y + moleculeBox.transform.position.y);
         moleculeBox.transform.position = newPos;
         //Debug.Log(ctx.ReadValue<Vector2>());
     }

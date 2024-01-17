@@ -350,6 +350,8 @@
 "Assets/Scripts/NotAMatchButton.cs"
 "Assets/Scripts/PlayOnMatch.cs"
 "Assets/Scripts/ResetMolecule.cs"
+"Assets/Scripts/ResetScene.cs"
+"Assets/Scripts/RestartDemoButton.cs"
 "Assets/Scripts/ToggleSwitch.cs"
 "Assets/Scripts/ToggleSwitchGroupManager.cs"
 "Assets/Scripts/ViewerInputManager.cs"

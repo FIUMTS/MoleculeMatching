@@ -23,12 +23,13 @@ public class MatchingManager : MonoBehaviour
     {
         MatchTester.OnParticleMatch += Match_OnParticleMatch;
         MatchTester.OnParticleUnmatch += Unmatch_OnParticleUnmatch;
+        NotAMatchButton.OnNotAMatchButtonPressed += (object sender, EventArgs e) => { notAMatchButtonPressed = true; };
     }
 
     private void Match_OnParticleMatch(object sender, MatchTester.OnParticleMatchEventArgs e)
     {
         if (!notAMatchButtonPressed)
-        { 
+        {
             Debug.Log(e.particle + " found a match.");
             switch (e.particle)
             {
@@ -43,7 +44,7 @@ public class MatchingManager : MonoBehaviour
                 Debug.Log("IT'S A MATCH");
                 MatchTester.OnParticleMatch -= Match_OnParticleMatch;
                 MatchTester.OnParticleUnmatch -= Unmatch_OnParticleUnmatch;
-                OnMatch?.Invoke(this, EventArgs.Empty);
+                OnMatch?.Invoke(new GameObject(), EventArgs.Empty);
             }
         }
     }
@@ -62,4 +63,5 @@ public class MatchingManager : MonoBehaviour
             }
         }
     }
+
 }

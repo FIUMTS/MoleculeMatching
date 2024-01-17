@@ -36,6 +36,7 @@ public class InterpolateMotion : MonoBehaviour
     {
         //isMatched = true;
         StartCoroutine(InterpolateMolecules());
+        MatchingManager.OnMatch -= Matched;
     }
 
     // Update is called once per frame

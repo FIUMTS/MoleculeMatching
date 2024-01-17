@@ -33,11 +33,10 @@ public class NotAMatchButton : MonoBehaviour
             GetComponent<Button>().interactable = false;
             StartCoroutine(movingMolecule.GetComponent<InterpolateMotion>().InterpolateMolecules());
             btnText.text = "Incorrect";
-            
-
         }
         else if (stillMolecule.CompareTag("Not Matching")) //If molecules don't actually match, user is correct.
         {
+            Debug.Log("CompareMolecules entered");
             GetComponent<Button>().interactable = false;
             NextRestartButton.GetComponent<Button>().interactable = true;
             btnText.text = "Correct!";
@@ -47,9 +46,10 @@ public class NotAMatchButton : MonoBehaviour
 
     private void SetTextCorrectOnMatch(object sender, EventArgs e)
     {
+        Debug.Log("SetTextCorrectOnMatch entered");
         btnText.text = "Correct!";
         NextRestartButton.GetComponent<Button>().interactable = true;
-        GetComponent<Button>().interactable = false;
+        gameObject.GetComponent<Button>().interactable = false;
         MatchingManager.OnMatch -= SetTextCorrectOnMatch;
     }
 

@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class NextButton : MonoBehaviour
 {
 
-    private void OnEnable()
+    private void Start()
     {
         MatchingManager.OnMatch += Next;
     }
@@ -16,6 +16,7 @@ public class NextButton : MonoBehaviour
     private void Next(object sender, EventArgs e)
     {
         GetComponent<Button>().interactable = true;
+        MatchingManager.OnMatch -= Next;
     }
 
     public void NextDemo()
