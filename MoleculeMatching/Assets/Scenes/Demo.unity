@@ -279,7 +279,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 30876721}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e785c0e896a5d5e4d89a12e59b345167, type: 3}
+  m_Script: {fileID: 11500000, guid: 51f937cf9b00bd644ae295b0457a1494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   molecule: {fileID: 443075116}
@@ -7297,7 +7297,7 @@ MonoBehaviour:
   onToggleOn:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 30876724}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ViewerInputManager, Assembly-CSharp
         m_MethodName: EnableTouch
         m_Mode: 1
@@ -7312,7 +7312,7 @@ MonoBehaviour:
   onToggleOff:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 30876724}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ViewerInputManager, Assembly-CSharp
         m_MethodName: EnableMouse
         m_Mode: 1

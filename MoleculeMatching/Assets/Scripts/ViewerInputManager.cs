@@ -26,25 +26,15 @@ public class ViewerInputManager : MonoBehaviour
     [SerializeField]
     private GameObject moleculeBox;
 
-    private void Start()
-    {
-        playerInput = GetComponent<PlayerInput>();
-
-        grabAction = playerInput.actions.FindAction("Grab");
-        rotationAction = playerInput.actions.FindAction("Rotation");
-        translationAction = playerInput.actions.FindAction("Translation");
-        panAction = playerInput.actions.FindAction("Pan");
-    }
-
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
-        
+
         grabAction = playerInput.actions.FindAction("Grab");
         rotationAction = playerInput.actions.FindAction("Rotation");
         translationAction = playerInput.actions.FindAction("Translation");
         panAction = playerInput.actions.FindAction("Pan");
-        
+
     }
 
     private void FreezeControls(object sender, EventArgs e)
@@ -75,7 +65,7 @@ public class ViewerInputManager : MonoBehaviour
         Debug.Log("Grabbed");
         float val = ctx.ReadValue<float>();
         if (val == 1)
-        { 
+        {
             //Debug.Log(val + ": Grabbed happened");
             rotationAction.performed += RotateAction;
             translationAction.performed -= MoveAction;
@@ -86,21 +76,22 @@ public class ViewerInputManager : MonoBehaviour
             rotationAction.performed -= RotateAction;
             translationAction.performed -= MoveAction;
         }
-        
+
     }
 
     private void RotateAction(InputAction.CallbackContext ctx)
     {
         Debug.Log("Rotate");
-        var axis = Quaternion.AngleAxis(-90f, Vector3.forward) * ctx.ReadValue<Vector2>(); 
+        var axis = Quaternion.AngleAxis(-90f, Vector3.forward) * ctx.ReadValue<Vector2>();
         molecule.transform.rotation = Quaternion.AngleAxis(ctx.ReadValue<Vector2>().magnitude * 0.5f, axis) * molecule.transform.rotation;
         panAction.performed += PanAction;
     }
 
     private void MoveAction(InputAction.CallbackContext ctx)
     {
+
         rotationAction.performed -= RotateAction;
-        Vector2 newPos = new (ctx.ReadValue<Vector2>().x + moleculeBox.transform.position.x, ctx.ReadValue<Vector2>().y + moleculeBox.transform.position.y);
+        Vector2 newPos = new(ctx.ReadValue<Vector2>().x + moleculeBox.transform.position.x, ctx.ReadValue<Vector2>().y + moleculeBox.transform.position.y);
         moleculeBox.transform.position = newPos;
         //Debug.Log(ctx.ReadValue<Vector2>());
     }
@@ -117,7 +108,7 @@ public class ViewerInputManager : MonoBehaviour
         }
         else if (val == 0)
         {
-           // Debug.Log(val + ": Panning stopped");
+            // Debug.Log(val + ": Panning stopped");
             translationAction.performed -= MoveAction;
             //rotationAction.performed += RotateAction;
         }
@@ -129,13 +120,23 @@ public class ViewerInputManager : MonoBehaviour
         //playerInput.actions.FindActionMap("Mouse").Enable();
         //playerInput.actions.FindActionMap("Touch").Disable();
     }
-    
+
     public void EnableTouch()
     {
         //playerInput.SwitchCurrentActionMap("Touch");
 
         playerInput.SwitchCurrentActionMap("Touch");
-       //playerInput.actions.FindActionMap("Touch").Enable();
-       //playerInput.actions.FindActionMap("Mouse").Disable();
+        //playerInput.actions.FindActionMap("Touch").Enable();
+        //playerInput.actions.FindActionMap("Mouse").Disable();
+    }
+
+    private void OnDestroy()
+    {
+        Debug.Log("Viewer Input Manager Destroyed");
+        grabAction.performed -= GrabAction;
+        rotationAction.performed -= RotateAction;
+        translationAction.performed -= MoveAction;
+        panAction.performed -= PanAction;
+        MatchingManager.OnMatch -= FreezeControls;
     }
 }

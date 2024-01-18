@@ -23,7 +23,9 @@ public class MatchingManager : MonoBehaviour
     {
         MatchTester.OnParticleMatch += Match_OnParticleMatch;
         MatchTester.OnParticleUnmatch += Unmatch_OnParticleUnmatch;
+        //lamda function
         NotAMatchButton.OnNotAMatchButtonPressed += (object sender, EventArgs e) => { notAMatchButtonPressed = true; };
+        //DontDestroyOnLoad(gameObject);
     }
 
     private void Match_OnParticleMatch(object sender, MatchTester.OnParticleMatchEventArgs e)
@@ -44,7 +46,7 @@ public class MatchingManager : MonoBehaviour
                 Debug.Log("IT'S A MATCH");
                 MatchTester.OnParticleMatch -= Match_OnParticleMatch;
                 MatchTester.OnParticleUnmatch -= Unmatch_OnParticleUnmatch;
-                OnMatch?.Invoke(new GameObject(), EventArgs.Empty);
+                OnMatch?.Invoke(this, EventArgs.Empty);
             }
         }
     }

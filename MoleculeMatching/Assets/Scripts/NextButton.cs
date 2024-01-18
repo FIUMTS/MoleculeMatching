@@ -35,4 +35,9 @@ public class NextButton : MonoBehaviour
         SceneManager.LoadScene(currScene);
     }
 
+    private void OnDestroy()
+    {
+        MatchingManager.OnMatch -= Next;
+    }
+
 }

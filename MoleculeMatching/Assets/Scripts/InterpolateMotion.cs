@@ -19,8 +19,6 @@ public class InterpolateMotion : MonoBehaviour
 
     private MeshRenderer mrenderer;
 
-    //private float timeElapsed = 0;
-    //private float timeElapsedCenter = 0;
     private float duration = 0.75f;
     private float durationCenter = 2f;
 
@@ -29,7 +27,6 @@ public class InterpolateMotion : MonoBehaviour
     {
         MatchingManager.OnMatch += Matched;
         mrenderer = GetComponent<MeshRenderer>();
-        
     }
 
     private void Matched(object sender, EventArgs e)
@@ -38,31 +35,6 @@ public class InterpolateMotion : MonoBehaviour
         StartCoroutine(InterpolateMolecules());
         MatchingManager.OnMatch -= Matched;
     }
-
-    // Update is called once per frame
-    /*void Update()
-    {
-        if (isMatched)
-        {
-            currentPos = transform.position;
-            currentRotation = transform.rotation;
-            if (timeElapsed < duration)
-            {
-                float t = timeElapsed / duration;
-                transform.position = Vector3.Lerp(currentPos, stillMolecule.transform.position, Mathf.SmoothStep(0, 1, t));
-                transform.rotation = Quaternion.Slerp(currentRotation, stillMolecule.transform.rotation, Mathf.SmoothStep(0, 1, t));
-                timeElapsed += Time.deltaTime;
-            }
-            else
-            {
-                Debug.Log("Move to center");
-                mrenderer.enabled = false;
-                float t = timeElapsedCenter / durationCenter;
-                stillMolecule.transform.position = Vector3.Lerp(stillMolecule.transform.position, new Vector3(1.55f, stillMolecule.transform.position.y, stillMolecule.transform.position.z), Mathf.SmoothStep(0, 1, t));
-                timeElapsedCenter += Time.deltaTime;
-            }
-        }
-    }*/
 
     public IEnumerator InterpolateMolecules()
     {
@@ -99,5 +71,10 @@ public class InterpolateMotion : MonoBehaviour
             time += Time.deltaTime;
             yield return null;
         }
+    }
+
+    private void OnDestroy()
+    {
+        MatchingManager.OnMatch -= Matched;
     }
 }
