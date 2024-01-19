@@ -249,9 +249,29 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9fe6a158-8658-4696-9fba-91ed7a2fed62
+    m_ActionName: Mouse/Grab[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: be62db61-98da-40c5-8dbb-edb5b2915743
+    m_ActionName: Mouse/Pan[/Mouse/rightButton,/Touchscreen/touch1/press]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f93e7627-87ab-40cb-accb-98158beee0c3
+    m_ActionName: Mouse/Rotation[/Mouse/delta,/Touchscreen/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9e7b616a-eef8-402f-a925-3ebbecb3201a
+    m_ActionName: Mouse/MouseAxis[/Mouse/delta/up,/Touchscreen/delta/up]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 45271272-5ffc-427c-b1f5-01ad22a2396b
+    m_ActionName: Mouse/Translation[/Mouse/delta,/Touchscreen/touch1/delta]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Mouse
+  m_DefaultControlScheme: 
   m_DefaultActionMap: Mouse
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}

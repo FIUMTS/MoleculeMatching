@@ -116,7 +116,7 @@
 -define:ENABLE_TERRAIN
 -define:ENABLE_TILEMAP
 -define:ENABLE_TIMELINE
--define:ENABLE_LEGACY_INPUT_MANAGER
+-define:ENABLE_INPUT_SYSTEM
 -define:TEXTCORE_FONT_ENGINE_1_5_OR_NEWER
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
@@ -330,7 +330,11 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.6f1/Editor/Data/PlaybackEngines/AndroidPlayer/Unity.Android.Types.dll"
 -r:"Library/PackageCache/com.unity.testtools.codecoverage@1.2.4/lib/ReportGenerator/ReportGeneratorMerged.dll"
 -r:"Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Cinemachine.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/com.unity.cinemachine.editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.EditorCoroutines.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.InputSystem.ForUI.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.InputSystem.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Performance.Profile-Analyzer.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.PlasticSCM.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Rider.Editor.ref.dll"
@@ -355,6 +359,40 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.6f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.6f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
+"Assets/ControlMaps/GamepadControls.cs"
+"Assets/ControlMaps/PointerControls.cs"
+"Assets/Demo/Scripts/Common/SceneLoadButton.cs"
+"Assets/Demo/Scripts/Common/ScoringController.cs"
+"Assets/Demo/Scripts/Common/VersionLabel.cs"
+"Assets/Demo/Scripts/Drawing/DrawingController.cs"
+"Assets/Demo/Scripts/Drawing/DrawingLine.cs"
+"Assets/Demo/Scripts/Drawing/DrawingRenderer.cs"
+"Assets/Demo/Scripts/Drawing/DrawingTool.cs"
+"Assets/Demo/Scripts/Drawing/UI/ColorSwatch.cs"
+"Assets/Demo/Scripts/Menu/LevelSelectItem.cs"
+"Assets/Demo/Scripts/Menu/LevelSelectScreen.cs"
+"Assets/Demo/Scripts/Rolling/Ball.cs"
+"Assets/Demo/Scripts/Rolling/Checkpoint.cs"
+"Assets/Demo/Scripts/Rolling/UI/VirtualControlsDisabler.cs"
+"Assets/Demo/Scripts/Swiping/Bin.cs"
+"Assets/Demo/Scripts/Swiping/Gutter.cs"
+"Assets/Demo/Scripts/Swiping/SpawnController.cs"
+"Assets/Demo/Scripts/Swiping/SwipingController.cs"
+"Assets/Demo/Scripts/Swiping/Trash.cs"
+"Assets/Demo/Scripts/Swiping/TrashType.cs"
+"Assets/Demo/Scripts/Tapping/Effects.cs"
+"Assets/Demo/Scripts/Tapping/SpawnController.cs"
+"Assets/Demo/Scripts/Tapping/TappingController.cs"
+"Assets/Demo/Scripts/Tapping/TapTarget.cs"
+"Assets/Scripts/Common/Helpers.cs"
+"Assets/Scripts/Common/Singleton.cs"
+"Assets/Scripts/Controller/GamepadInputManager.cs"
+"Assets/Scripts/Drawing/PointerInput.cs"
+"Assets/Scripts/Drawing/PointerInputManager.cs"
+"Assets/Scripts/Gestures/ActiveGesture.cs"
+"Assets/Scripts/Gestures/GestureController.cs"
+"Assets/Scripts/Gestures/SwipeInput.cs"
+"Assets/Scripts/Gestures/TapInput.cs"
 "Assets/Scripts/Scene1.cs"
 -langversion:9.0
 

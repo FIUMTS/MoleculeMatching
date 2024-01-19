@@ -37,6 +37,7 @@ public class ViewerInputManager : MonoBehaviour
 
     }
 
+
     private void FreezeControls(object sender, EventArgs e)
     {
         Debug.Log("Freeze");

@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class PlayOnMatch : MonoBehaviour
 {
-    private ParticleSystem particleSystem;
+    private ParticleSystem pSystem;
 
     private void Start()
     {
-        particleSystem = GetComponent<ParticleSystem>();
+        pSystem = GetComponent<ParticleSystem>();
         MatchingManager.OnMatch += PlayParticle;
         NotAMatchButton.OnNotAMatchButtonPressed += TurnParticleSysRed;
     }
@@ -17,14 +17,21 @@ public class PlayOnMatch : MonoBehaviour
     private void PlayParticle(object sender, EventArgs e)
     {
         
-        particleSystem.Play();
+        pSystem.Play();
         MatchingManager.OnMatch -= PlayParticle;
     }
 
     private void TurnParticleSysRed(object sender, EventArgs e)
     {
-        var main = particleSystem.main;
+        var main = pSystem.main;
         main.startColor = Color.red;
         NotAMatchButton.OnNotAMatchButtonPressed -= TurnParticleSysRed;
+        pSystem.Play();
+    }
+
+    private void OnDestroy()
+    {
+        NotAMatchButton.OnNotAMatchButtonPressed -= TurnParticleSysRed;
+        MatchingManager.OnMatch -= PlayParticle;
     }
 }

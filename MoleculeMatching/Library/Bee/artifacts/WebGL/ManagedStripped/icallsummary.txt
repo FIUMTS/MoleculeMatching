@@ -188,7 +188,6 @@ UnityEngine.GameObject::CompareTag
 UnityEngine.GameObject::get_activeInHierarchy
 UnityEngine.GameObject::get_activeSelf
 UnityEngine.GameObject::get_layer
-UnityEngine.GameObject::get_tag
 UnityEngine.GameObject::Internal_CreateGameObject
 UnityEngine.GameObject::SendMessage
 UnityEngine.GameObject::SetActive
@@ -406,6 +405,7 @@ UnityEngine.Object::GetName
 UnityEngine.Object::ToString
 UnityEngine.Object::Destroy
 UnityEngine.Object::DestroyImmediate
+UnityEngine.Object::DontDestroyOnLoad
 UnityEngine.Object::SetName
 UnityEngine.Object::set_hideFlags
 UnityEngine.Object::get_hideFlags
@@ -417,6 +417,7 @@ UnityEngine.ParticleSystem::EmitOld_Internal
 UnityEngine.ParticleSystem::Emit_Injected
 UnityEngine.ParticleSystem::Emit_Internal
 UnityEngine.ParticleSystem::Play
+UnityEngine.ParticleSystem/MainModule::set_startColor_Injected
 UnityEngine.ParticleSystemRenderer::GetMeshes
 UnityEngine.Physics::get_invokeCollisionCallbacks
 UnityEngine.Physics::get_reuseCollisionCallbacks
@@ -515,7 +516,9 @@ UnityEngine.Resources::GetBuiltinResource
 UnityEngine.ResourcesAPIInternal::Load
 UnityEngine.ResourcesAPIInternal::FindObjectsOfTypeAll
 UnityEngine.ResourcesAPIInternal::FindShaderByName
+UnityEngine.SceneManagement.Scene::GetNameInternal
 UnityEngine.SceneManagement.SceneManager::get_sceneCount
+UnityEngine.SceneManagement.SceneManager::GetActiveScene_Injected
 UnityEngine.SceneManagement.SceneManager::GetSceneAt_Injected
 UnityEngine.SceneManagement.SceneManagerAPIInternal::LoadSceneAsyncNameIndexInternal_Injected
 UnityEngine.Screen::get_fullScreen

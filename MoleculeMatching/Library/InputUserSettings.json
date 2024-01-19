@@ -1,5 +1,5 @@
 {
     "addDevicesNotSupportedByProject": false,
     "autoSaveInputActionAssets": true,
-    "simulateTouch": false
+    "simulateTouch": true
 }

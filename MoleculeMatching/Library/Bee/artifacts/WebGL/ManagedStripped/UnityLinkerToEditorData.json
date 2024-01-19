@@ -36,6 +36,7 @@
           {
             "name": "AudioBehaviour",
             "scenes": [
+              "Assets/Scenes/Demo 2.unity",
               "Assets/Scenes/Demo.unity",
               "Assets/Scenes/Title.unity"
             ],
@@ -51,6 +52,7 @@
           {
             "name": "AudioListener",
             "scenes": [
+              "Assets/Scenes/Demo 2.unity",
               "Assets/Scenes/Demo.unity",
               "Assets/Scenes/Title.unity"
             ],
@@ -89,6 +91,7 @@
           {
             "name": "Camera",
             "scenes": [
+              "Assets/Scenes/Demo 2.unity",
               "Assets/Scenes/Demo.unity",
               "Assets/Scenes/Title.unity"
             ],
@@ -110,6 +113,7 @@
           {
             "name": "Cubemap",
             "scenes": [
+              "Assets/Scenes/Demo 2.unity",
               "Assets/Scenes/Demo.unity",
               "Assets/Scenes/Title.unity"
             ],
@@ -131,6 +135,7 @@
           {
             "name": "EditorExtension",
             "scenes": [
+              "Assets/Scenes/Demo 2.unity",
               "Assets/Scenes/Demo.unity",
               "Assets/Scenes/Title.unity"
             ],
@@ -146,6 +151,7 @@
           {
             "name": "GameObject",
             "scenes": [
+              "Assets/Scenes/Demo 2.unity",
               "Assets/Scenes/Demo.unity",
               "Assets/Scenes/Title.unity"
             ],
@@ -173,6 +179,7 @@
           {
             "name": "LevelGameManager",
             "scenes": [
+              "Assets/Scenes/Demo 2.unity",
               "Assets/Scenes/Demo.unity",
               "Assets/Scenes/Title.unity"
             ],
@@ -182,6 +189,7 @@
           {
             "name": "Light",
             "scenes": [
+              "Assets/Scenes/Demo 2.unity",
               "Assets/Scenes/Demo.unity",
               "Assets/Scenes/Title.unity"
             ],
@@ -203,6 +211,7 @@
           {
             "name": "LightmapSettings",
             "scenes": [
+              "Assets/Scenes/Demo 2.unity",
               "Assets/Scenes/Demo.unity",
               "Assets/Scenes/Title.unity"
             ],
@@ -218,6 +227,7 @@
           {
             "name": "Material",
             "scenes": [
+              "Assets/Scenes/Demo 2.unity",
               "Assets/Scenes/Demo.unity",
               "Assets/Scenes/Title.unity"
             ],
@@ -227,6 +237,7 @@
           {
             "name": "Mesh",
             "scenes": [
+              "Assets/Scenes/Demo 2.unity",
               "Assets/Scenes/Demo.unity"
             ],
             "dependencyType": 0,
@@ -235,6 +246,7 @@
           {
             "name": "MeshFilter",
             "scenes": [
+              "Assets/Scenes/Demo 2.unity",
               "Assets/Scenes/Demo.unity"
             ],
             "dependencyType": 0,
@@ -243,6 +255,7 @@
           {
             "name": "MeshRenderer",
             "scenes": [
+              "Assets/Scenes/Demo 2.unity",
               "Assets/Scenes/Demo.unity"
             ],
             "dependencyType": 0,
@@ -251,6 +264,7 @@
           {
             "name": "MonoBehaviour",
             "scenes": [
+              "Assets/Scenes/Demo 2.unity",
               "Assets/Scenes/Demo.unity",
               "Assets/Scenes/Title.unity"
             ],
@@ -266,6 +280,7 @@
           {
             "name": "MonoScript",
             "scenes": [
+              "Assets/Scenes/Demo 2.unity",
               "Assets/Scenes/Demo.unity",
               "Assets/Scenes/Title.unity"
             ],
@@ -275,6 +290,7 @@
           {
             "name": "NamedObject",
             "scenes": [
+              "Assets/Scenes/Demo 2.unity",
               "Assets/Scenes/Demo.unity",
               "Assets/Scenes/Title.unity"
             ],
@@ -308,6 +324,7 @@
           {
             "name": "RectTransform",
             "scenes": [
+              "Assets/Scenes/Demo 2.unity",
               "Assets/Scenes/Demo.unity",
               "Assets/Scenes/Title.unity"
             ],
@@ -323,6 +340,7 @@
           {
             "name": "RenderSettings",
             "scenes": [
+              "Assets/Scenes/Demo 2.unity",
               "Assets/Scenes/Demo.unity",
               "Assets/Scenes/Title.unity"
             ],
@@ -356,6 +374,7 @@
           {
             "name": "Shader",
             "scenes": [
+              "Assets/Scenes/Demo 2.unity",
               "Assets/Scenes/Demo.unity",
               "Assets/Scenes/Title.unity"
             ],
@@ -377,6 +396,7 @@
           {
             "name": "Sprite",
             "scenes": [
+              "Assets/Scenes/Demo 2.unity",
               "Assets/Scenes/Demo.unity",
               "Assets/Scenes/Title.unity"
             ],
@@ -651,6 +671,7 @@
           {
             "name": "ParticleSystem",
             "scenes": [
+              "Assets/Scenes/Demo 2.unity",
               "Assets/Scenes/Demo.unity"
             ],
             "dependencyType": 0,
@@ -659,6 +680,7 @@
           {
             "name": "ParticleSystemRenderer",
             "scenes": [
+              "Assets/Scenes/Demo 2.unity",
               "Assets/Scenes/Demo.unity"
             ],
             "dependencyType": 0,
@@ -672,6 +694,7 @@
           {
             "name": "BoxCollider",
             "scenes": [
+              "Assets/Scenes/Demo 2.unity",
               "Assets/Scenes/Demo.unity"
             ],
             "dependencyType": 0,
@@ -692,6 +715,7 @@
           {
             "name": "Rigidbody",
             "scenes": [
+              "Assets/Scenes/Demo 2.unity",
               "Assets/Scenes/Demo.unity"
             ],
             "dependencyType": 0,
@@ -700,6 +724,7 @@
           {
             "name": "SphereCollider",
             "scenes": [
+              "Assets/Scenes/Demo 2.unity",
               "Assets/Scenes/Demo.unity"
             ],
             "dependencyType": 0,
@@ -917,6 +942,7 @@
           {
             "name": "Font",
             "scenes": [
+              "Assets/Scenes/Demo 2.unity",
               "Assets/Scenes/Demo.unity",
               "Assets/Scenes/Title.unity"
             ],
@@ -961,6 +987,7 @@
           {
             "name": "Canvas",
             "scenes": [
+              "Assets/Scenes/Demo 2.unity",
               "Assets/Scenes/Demo.unity",
               "Assets/Scenes/Title.unity"
             ],
@@ -976,6 +1003,7 @@
           {
             "name": "CanvasRenderer",
             "scenes": [
+              "Assets/Scenes/Demo 2.unity",
               "Assets/Scenes/Demo.unity",
               "Assets/Scenes/Title.unity"
             ],

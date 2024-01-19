@@ -65,6 +65,17 @@
                 },
                 {
                     "name": "",
+                    "id": "7b22c405-5a96-45ec-95ca-2db36c8bbb82",
+                    "path": "<Touchscreen>/primaryTouch/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Touch",
+                    "action": "Grab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "c2bb0465-9e36-493c-bbaf-0a5fad54d7ed",
                     "path": "<Mouse>/rightButton",
                     "interactions": "Press(behavior=2)",
@@ -99,7 +110,7 @@
                 {
                     "name": "",
                     "id": "11811a5d-0150-4c58-be3a-995635f1b0f5",
-                    "path": "<Touchscreen>/delta",
+                    "path": "<Touchscreen>/touch0/delta",
                     "interactions": "",
                     "processors": "",
                     "groups": "Touch",
