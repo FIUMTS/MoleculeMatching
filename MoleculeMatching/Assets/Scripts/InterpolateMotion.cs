@@ -13,11 +13,18 @@ public class InterpolateMotion : MonoBehaviour
 {
     [SerializeField]
     private GameObject stillMolecule;
+    
+    [SerializeField]
+    private GameObject movingMolecule;
+    
+    [SerializeField]
+    private GameObject helpArrow;
 
     private Vector3 currentPos;
     private Quaternion currentRotation;
 
     private MeshRenderer mrenderer;
+    private MeshRenderer arrowMRenderer;
 
     private float duration = 0.75f;
     private float durationCenter = 2f;
@@ -26,7 +33,10 @@ public class InterpolateMotion : MonoBehaviour
     void Start()
     {
         MatchingManager.OnMatch += Matched;
-        mrenderer = GetComponent<MeshRenderer>();
+        mrenderer = movingMolecule.GetComponent<MeshRenderer>();
+        if(helpArrow != null)
+            arrowMRenderer = helpArrow.GetComponent<MeshRenderer>();
+
     }
 
     private void Matched(object sender, EventArgs e)
@@ -38,8 +48,9 @@ public class InterpolateMotion : MonoBehaviour
 
     public IEnumerator InterpolateMolecules()
     {
-        currentPos = transform.position;
-        currentRotation = transform.rotation;
+        currentPos = movingMolecule.transform.position;
+        currentRotation = movingMolecule.transform.rotation;
+        helpArrow.SetActive(false);
 
         float time = 0;
         if (duration > 0)
@@ -48,8 +59,8 @@ public class InterpolateMotion : MonoBehaviour
             while (time < duration)
             {
                 float t = time / duration;
-                transform.position = Vector3.Lerp(currentPos, stillMolecule.transform.position, Mathf.SmoothStep(0, 1, t));
-                transform.rotation = Quaternion.Slerp(currentRotation, stillMolecule.transform.rotation, Mathf.SmoothStep(0, 1, t));
+                movingMolecule.transform.position = Vector3.Lerp(currentPos, stillMolecule.transform.position, Mathf.SmoothStep(0, 1, t));
+                movingMolecule.transform.rotation = Quaternion.Slerp(currentRotation, stillMolecule.transform.rotation, Mathf.SmoothStep(0, 1, t));
                 time += Time.deltaTime;
                 yield return null;
             }
@@ -59,8 +70,8 @@ public class InterpolateMotion : MonoBehaviour
 
     private IEnumerator MoveMoleculeToMiddle()
     {
-        currentPos = transform.position;
-        currentRotation = transform.rotation;
+        //currentPos = movingMolecule.transform.position;
+        //currentRotation = movingMolecule.transform.rotation;
 
         float time = 0;
         while (time < durationCenter)

@@ -7,11 +7,18 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.InputSystem;
 
+/*
+ * Molecule Matcher is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ * You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.
+ */
+
 public class NotAMatchButton : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private GameObject stillMolecule;
     [SerializeField] private GameObject movingMolecule;
+    [SerializeField] private GameObject interpolationManager;
 
     public static EventHandler OnNotAMatchButtonPressed;
 
@@ -37,7 +44,7 @@ public class NotAMatchButton : MonoBehaviour
             //fire off event
             OnNotAMatchButtonPressed?.Invoke(this, EventArgs.Empty);
             GetComponent<Button>().interactable = false;
-            StartCoroutine(movingMolecule.GetComponent<InterpolateMotion>().InterpolateMolecules());
+            StartCoroutine(interpolationManager.GetComponent<InterpolateMotion>().InterpolateMolecules());
             gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "Incorrect";
         }
         else if (stillMolecule.CompareTag("Not Matching")) //If molecules don't actually match, user is correct.
