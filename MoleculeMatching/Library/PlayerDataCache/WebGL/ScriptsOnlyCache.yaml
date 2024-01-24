@@ -21,6 +21,9 @@ ScriptsOnlyBuild:
     - UnityEngine.InputSystem.PlayerInput
     - UnityEngine.InputSystem.RemoteInputPlayerConnection
     - UnityEngine.InputSystem.UI.InputSystemUIInputModule
+    Unity.Play.Publisher.Editor.dll:
+    - Unity.Play.Publisher.Editor.AnalyticsHelper
+    - Unity.Play.Publisher.Editor.PublisherWindow
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro:
@@ -165,35 +168,35 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 18274}
     - Class: 114
-      Script: {instanceID: 18948}
+      Script: {instanceID: 18950}
     - Class: 114
-      Script: {instanceID: 19098}
+      Script: {instanceID: 19100}
     - Class: 114
-      Script: {instanceID: 19554}
+      Script: {instanceID: 19560}
     - Class: 114
-      Script: {instanceID: 20090}
+      Script: {instanceID: 20100}
     - Class: 114
-      Script: {instanceID: 20348}
+      Script: {instanceID: 20360}
     - Class: 114
-      Script: {instanceID: 20430}
+      Script: {instanceID: 20442}
     - Class: 114
-      Script: {instanceID: 20938}
+      Script: {instanceID: 20954}
     - Class: 114
-      Script: {instanceID: 20996}
+      Script: {instanceID: 21012}
     - Class: 114
-      Script: {instanceID: 21028}
+      Script: {instanceID: 21044}
     - Class: 114
-      Script: {instanceID: 21196}
+      Script: {instanceID: 21214}
     - Class: 114
-      Script: {instanceID: 21266}
+      Script: {instanceID: 21286}
     - Class: 114
-      Script: {instanceID: 21946}
+      Script: {instanceID: 21970}
     - Class: 114
-      Script: {instanceID: 22162}
+      Script: {instanceID: 22188}
     - Class: 114
-      Script: {instanceID: 22698}
+      Script: {instanceID: 22728}
     - Class: 114
-      Script: {instanceID: 22904}
+      Script: {instanceID: 22934}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -262,35 +265,35 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 18274}
     - Class: 114
-      Script: {instanceID: 18948}
+      Script: {instanceID: 18950}
     - Class: 114
-      Script: {instanceID: 19098}
+      Script: {instanceID: 19100}
     - Class: 114
-      Script: {instanceID: 19554}
+      Script: {instanceID: 19560}
     - Class: 114
-      Script: {instanceID: 20090}
+      Script: {instanceID: 20100}
     - Class: 114
-      Script: {instanceID: 20348}
+      Script: {instanceID: 20360}
     - Class: 114
-      Script: {instanceID: 20430}
+      Script: {instanceID: 20442}
     - Class: 114
-      Script: {instanceID: 20938}
+      Script: {instanceID: 20954}
     - Class: 114
-      Script: {instanceID: 20996}
+      Script: {instanceID: 21012}
     - Class: 114
-      Script: {instanceID: 21028}
+      Script: {instanceID: 21044}
     - Class: 114
-      Script: {instanceID: 21196}
+      Script: {instanceID: 21214}
     - Class: 114
-      Script: {instanceID: 21266}
+      Script: {instanceID: 21286}
     - Class: 114
-      Script: {instanceID: 21946}
+      Script: {instanceID: 21970}
     - Class: 114
-      Script: {instanceID: 22162}
+      Script: {instanceID: 22188}
     - Class: 114
-      Script: {instanceID: 22698}
+      Script: {instanceID: 22728}
     - Class: 114
-      Script: {instanceID: 22904}
+      Script: {instanceID: 22934}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -349,17 +352,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 18274}
     - Class: 114
-      Script: {instanceID: 19392}
+      Script: {instanceID: 19396}
     - Class: 114
-      Script: {instanceID: 19668}
+      Script: {instanceID: 19678}
     - Class: 114
-      Script: {instanceID: 20430}
+      Script: {instanceID: 20442}
     - Class: 114
-      Script: {instanceID: 21028}
+      Script: {instanceID: 21044}
     - Class: 114
-      Script: {instanceID: 21196}
+      Script: {instanceID: 21214}
     - Class: 114
-      Script: {instanceID: 21548}
+      Script: {instanceID: 21572}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1468,4 +1471,5 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Title.unity
   - Assets/Scenes/Demo.unity
   - Assets/Scenes/Demo 2.unity
-  playerPath: C:/Users/alecramo/Desktop/MoleculeMatching
+  playerPath: C:/Users/alecramo/Unity Projects/MoleculeMatching/MoleculeMatching/WebGL
+    Builds
